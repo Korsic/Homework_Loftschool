@@ -16,12 +16,15 @@ Author: Korsic
 */
 
 
+function good_smile() {
+    echo "¯\\_(ツ)_/¯";
+}
 
 function test_rx_pack ($str) {
     $smile = "#\:\)#";
     preg_match($smile, $str, $result_temp);
     if($result_temp[0] == ":)") {
-        echo "¯\\_(ツ)_/¯";
+        good_smile();
     } else {
         // Проверяем на количество пакетов
         preg_match("#(packets.*?)\s#i", $str, $result_temp);
@@ -35,4 +38,4 @@ function test_rx_pack ($str) {
 
 }
 
-test_rx_pack ("RX packets:10011 errors:0 dropped:0 : ) overruns:0 frame:0. ");
+test_rx_pack ("RX packets:10011 errors:0 dropped:0 :) overruns:0 frame:0. ");
