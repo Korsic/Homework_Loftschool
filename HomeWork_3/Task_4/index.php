@@ -30,37 +30,5 @@ $wiki = file_get_contents_curl("https://en.wikipedia.org/w/api.php?action=query&
 preg_match('#("title":".*?)\"#i', $wiki, $result);
 echo $result[0] . "<br />";
 
-
-
 preg_match('#("pageid":)[\d]+#i', $wiki, $result);
-echo $result[0] . "<br />";
-
-
-
-
-
-/*preg_match("#(title.*?)\,#i", $wiki, $result_temp);
-
-echo "<br />";
-
-echo $result_temp[0];
-
-preg_match("#:.*#i", $result_temp[0], $result_temp);
-
-echo "<br />";
-echo $result_temp[0];
-
-
-preg_match('#[^,^:^"]+#i', $result_temp[0], $result_temp);
-
-echo "<br />";
-echo $result_temp[0];
-
-
-//echo "title: " . $result_temp[0] . "<br />";
-
-
-/*
-preg_match("#(pageid.*?)\,#i", $wiki, $result_temp);
-preg_match("#[\d]+#i", $wiki, $result_temp);
-echo "pageid:  " . $result_temp[0];
+echo $result[0];
