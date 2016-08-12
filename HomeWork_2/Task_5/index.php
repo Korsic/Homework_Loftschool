@@ -10,8 +10,8 @@ function check_palindrom($str) {
     $str = str_replace(" ", "", $str);
     $str = mb_strtolower($str);
 
-    //Проверяем строку на палиндромность
-    $lench = iconv_strlen($str);
+    ### Проверяем строку на палиндромность вручную
+    /*$lench = iconv_strlen($str);
     $lench_circle = (int)ceil($lench / 2);
     $i = 0;
     while ($i < $lench_circle) {
@@ -19,8 +19,13 @@ function check_palindrom($str) {
             return false;
         }
         $i++;
+    }*/
+    ### Проверяем строку на палиндромность с помощью реверса массива
+    preg_match_all('/./us', $str, $str_ar);
+    if ($str == implode(array_reverse($str_ar[0]))) {
+        return true;
     }
-    return true;
+    return false;
 }
 
 function russian_speak($value) {
@@ -31,5 +36,4 @@ function russian_speak($value) {
     }
 }
 
-russian_speak(check_palindrom("На F   FгF  Fан"));
-
+russian_speak(check_palindrom("А роза уПАЛА на лапУ азора"));
