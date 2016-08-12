@@ -34,6 +34,20 @@ function my_function($array, $math) {
                 }
                 break;
             case '/':
+                // Реализация с делением первого элемента на все последующие:
+                /*if (in_array(0, $array)) {
+                    exit("Деление на ноль невозможно");
+                } else {
+                    $result = $array[0];
+                    $i = 1;
+                    while (isset($array[$i])) {
+                        $result /= $array[$i];
+                        $i++;
+                    }
+                }*/
+
+                //Конец реализации
+                
                 $result = 1;
                 if (in_array(0, $array)) {
                     exit("Деление на ноль невозможно");
@@ -50,5 +64,5 @@ function my_function($array, $math) {
     }
 }
 
-$array = [2, 2, 3, 10];
+$array = [2, 3, 1];
 my_function($array, '/');
