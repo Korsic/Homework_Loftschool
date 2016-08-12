@@ -10,11 +10,7 @@ function my_function($array, $type = false) {
         echo "<p>" . $value . "</p>";
     }
     if ($type == true) {
-        $str_result = '';
-        foreach ($array as $value) {
-            $str_result .= $value;
-        }
-        return $str_result;
+        return implode($array);
     }
 }
 
